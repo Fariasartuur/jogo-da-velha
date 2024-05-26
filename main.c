@@ -2,30 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-void imprimirJogo(char jogo[3][3])
-{
-
-
+void imprimirJogo(char jogo[3][3]) {
+    
     int i = 1;
     int l, c;
 
-    printf("     1   2   3\n     %c   %c   %c\n", 25, 25, 25);
-    for (l = 0; l < 3; l++)
-    {
-        printf("%d %c ", i, 26);
-        for (c = 0; c < 3; c++) 
-        {
-            printf(" %c ", jogo[l][c]);
-            if (c < 2){
-                printf("|");
-            }
+    printf("     1   2   3\n");
+    printf("   +---+---+---+\n");
+    for (l = 0; l < 3; l++) {
+        printf(" %d ", i);
+        for (c = 0; c < 3; c++) {
+            printf("| %c ", jogo[l][c]);
         }
-        if (l < 2){
-            printf("\n    ---|---|---");
+        printf("|\n");
+        if (l < 2) {
+            printf("   +---+---+---+\n");
         }
-        printf("\n");
         i++;
     }
+    printf("   +---+---+---+\n");
 }
 
 int ver(char jogo[3][3])
